@@ -4,7 +4,9 @@ angular.module('starter.controllers', [])
 
 .controller('MapController', function($scope, $ionicLoading, $compile) {
 
-	$scope.init = function() {
+  $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+
+	/*$scope.init = function() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
 
         var mapOptions = {
@@ -58,7 +60,7 @@ angular.module('starter.controllers', [])
 
     $scope.clickTest = function() {
         alert('Example of infowindow with ng-click')
-    };
+    };*/
 
 })
 
