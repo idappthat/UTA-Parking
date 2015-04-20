@@ -2,68 +2,69 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-//.controller('MapController', function($scope, $ionicLoading, $compile) {
+// .controller('MapCoordinatesCtrl', function($scope, $compile) {
+//       var TILE_SIZE = 256;
 
-  //$scope.map = { center: { latitude: 32.730346, longitude: -97.114586 }, zoom: 17 };
+//       function bound(value, opt_min, opt_max) {
+//         if (opt_min != null) value = Math.max(value, opt_min);
+//         if (opt_max != null) value = Math.min(value, opt_max);
+//         return value;
+//       }
 
-//32.730346, -97.114586
-	/*$scope.init = function() {
-        var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
+//       function degreesToRadians(deg) {
+//         return deg * (Math.PI / 180);
+//       }
 
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map"),
-            mapOptions);
+//       function radiansToDegrees(rad) {
+//         return rad / (Math.PI / 180);
+//       }
 
-        //Marker + infowindow + angularjs compiled ng-click
-        var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-        var compiled = $compile(contentString)($scope);
+//       function MercatorProjection() {
+//         this.pixelOrigin_ = new google.maps.Point(TILE_SIZE / 2, TILE_SIZE / 2);
+//         this.pixelsPerLonDegree_ = TILE_SIZE / 360;
+//         this.pixelsPerLonRadian_ = TILE_SIZE / (2 * Math.PI);
+//       }
 
-        var infowindow = new google.maps.InfoWindow({
-          content: compiled[0]
-        });
+//       MercatorProjection.prototype.fromLatLngToPoint = function(latLng,
+//           opt_point) {
+//         var me = this;
+//         var point = opt_point || new google.maps.Point(0, 0);
+//         var origin = me.pixelOrigin_;
 
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
+//         point.x = origin.x + latLng.lng() * me.pixelsPerLonDegree_;
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.open(map,marker);
-        });
+//         // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+//         // about a third of a tile past the edge of the world tile.
+//         var siny = bound(Math.sin(degreesToRadians(latLng.lat())), -0.9999,
+//             0.9999);
+//         point.y = origin.y + 0.5 * Math.log((1 + siny) / (1 - siny)) *
+//             -me.pixelsPerLonRadian_;
+//         return point;
+//       };
 
-        $scope.map = map;
-    };
+//       MercatorProjection.prototype.fromPointToLatLng = function(point) {
+//         var me = this;
+//         var origin = me.pixelOrigin_;
+//         var lng = (point.x - origin.x) / me.pixelsPerLonDegree_;
+//         var latRadians = (point.y - origin.y) / -me.pixelsPerLonRadian_;
+//         var lat = radiansToDegrees(2 * Math.atan(Math.exp(latRadians)) -
+//             Math.PI / 2);
+//         return new google.maps.LatLng(lat, lng);
+//       };
 
-    // google.maps.event.addDomListener(window, 'load', initialize);
-
-    $scope.centerOnMe = function() {
-        if(!$scope.map) {
-            return;
-        }
-
-        $scope.loading = $ionicLoading.show({
-          content: 'Getting current location...',
-          showBackdrop: false
-        });
-
-        navigator.geolocation.getCurrentPosition(function(pos) {
-          $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-          $scope.loading.hide();
-        }, function(error) {
-          alert('Unable to get location: ' + error.message);
-        });
-    };
-
-    $scope.clickTest = function() {
-        alert('Example of infowindow with ng-click')
-    };*/
-
-//})
+//       $scope.$on('mapInitialized', function(event, map) {
+//         var numTiles = 1 << map.getZoom();
+//         var projection = new MercatorProjection();
+//         $scope.chicago = map.getCenter();
+//         $scope.worldCoordinate = projection.fromLatLngToPoint($scope.chicago);
+//         $scope.pixelCoordinate = new google.maps.Point(
+//             $scope.worldCoordinate.x * numTiles,
+//             $scope.worldCoordinate.y * numTiles);
+//         $scope.tileCoordinate = new google.maps.Point(
+//             Math.floor($scope.pixelCoordinate.x / TILE_SIZE),
+//             Math.floor($scope.pixelCoordinate.y / TILE_SIZE));
+//       });
+//     });
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
