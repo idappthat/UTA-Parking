@@ -2,10 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('MapController', function($scope, $ionicLoading, $compile) {
+//.controller('MapController', function($scope, $ionicLoading, $compile) {
 
-  $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+  //$scope.map = { center: { latitude: 32.730346, longitude: -97.114586 }, zoom: 17 };
 
+//32.730346, -97.114586
 	/*$scope.init = function() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
 
@@ -62,7 +63,7 @@ angular.module('starter.controllers', [])
         alert('Example of infowindow with ng-click')
     };*/
 
-})
+//})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
