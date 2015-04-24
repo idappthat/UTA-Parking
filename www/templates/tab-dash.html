@@ -1,5 +1,5 @@
 <ion-view view-title="Dashboard">
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="DashCtrl">
     <div class="list card">
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
@@ -24,5 +24,11 @@
         </div>
       </div>
     </div>
-  </ion-content>
+    <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+    <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
+    <!-- this code was just a place holder for testing  <button class="button" ng-click="takePicture()">Take Picture</button>-->
+    <a href="#" class="myButton" ng-click="takePicture()">Camera</a>
+</ion-content>
 </ion-view>
+
+<!--This is a comment. Comments are not displayed in the browser-->
