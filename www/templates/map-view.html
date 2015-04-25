@@ -1,36 +1,39 @@
 <ion-view view-title="Map" ng-init="init()">
 	<ion-nav-buttons side="right">
-    <button class="button button-clear" ng-click="doSomething()">
-      <i class="ion-gear-b"></i>
-    </button>
-  </ion-nav-buttons>
-  <ion-content scroll="false">
-	 <!-- <ui-gmap-google-map center="map.center" draggable="true" zoom="map.zoom" options="map.options" events="map.events"> 
-                <ui-gmap-markers models="map.markers"  
-                doCluster="true"  
-                coords="'self'"  
-                icon="'icon'"  
-                click="'onclicked'" 
-                options="'options'" 
-                idkey='id' 
-                clusterOptions='map.clusterOptions'
-                control='markerControl.getChildMarkers().get(id)'>     
-                </ui-gmap-markers>
-            </ui-gmap-google-map>  -->
-            <!-- <map center="-34.397, 150.644" zoom="8"></map>
- -->  
+		<a class="button button-icon button-clear ion-gear-b" href="/#/profile">
+		</a>
+	</ion-nav-buttons>
+	<ion-content scroll="false">
+		<map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
+		[{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'landscape.natural','elementType':'geometry.fill','stylers':[{'color':'#f8f8f8'}]},{'featureType':'landscape.man_made','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#676D75'}]},{'featureType':'poi','elementType':'geometry.fill','stylers':[{'color':'#cfd5db'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#666666'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.local','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'road.local','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'visibility':'on'}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#585d63'}]},{'featureType':'water','elementType':'geometry.fill','stylers':[{'color':'#43B7EA'}]}]
+		">
+			<info-window id="1" position="32.730346, -97.114586" visible="true">
+				<div ng-non-bindable="">
+					This is a test
+				</div>
+			</info-window>
+		</map>
 
-<!-- <map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true"> </map>
- -->    <map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
- [{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'landscape.natural','elementType':'geometry.fill','stylers':[{'color':'#f8f8f8'}]},{'featureType':'landscape.man_made','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#676D75'}]},{'featureType':'poi','elementType':'geometry.fill','stylers':[{'color':'#cfd5db'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#666666'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.local','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'road.local','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'visibility':'on'}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#585d63'}]},{'featureType':'water','elementType':'geometry.fill','stylers':[{'color':'#43B7EA'}]}]
- ">
-      <info-window id="1" position="32.730346, -97.114586" visible="true">
-          <div ng-non-bindable="">
-            This is a test
-          </div>
-        </info-window>
-      </map>
+		<ion-tabs class="tabs-icon-top tabs-positive">
 
-    </ion-content>
+		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s">
+		  </ion-tab>
+
+		  <ion-tab title="Bus" icon-off="ion-android-bus" icon-on="ion-android-bus">
+		  </ion-tab>
+
+		  <ion-tab title="Main" icon-off="ion-plus-round" icon-on="ion-plus-round">
+		    <ion-nav-view name="tab-map"></ion-nav-view>
+		  </ion-tab>
+
+		  <ion-tab title="Bike" icon-off="ion-android-bicycle" icon-on="ion-android-bicycle">
+		  </ion-tab>
+
+		  <ion-tab title="Favorite" icon-off="ion-heart" icon-on="ion-heart">
+		  </ion-tab>
+
+
+		</ion-tabs>
+	</ion-content>
 </ion-view>
 
