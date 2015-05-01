@@ -1,4 +1,4 @@
-<ion-view view-title="Map" ng-init="init()">
+<ion-view view-title="Map" ng-init="mainMenuSelect()">
 	<ion-nav-buttons side="right">
 		<a class="button button-icon button-clear ion-gear-b" href="/#/profile">
 		</a>
@@ -15,7 +15,7 @@
 		</map>
 
 		<ion-tabs class="tabs-icon-top ts-positive">
-		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s">
+		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s" ng-click="alert(1)">
 		  </ion-tab>
 
 		  <ion-tab title="Bus" icon-off="ion-android-bus" icon-on="ion-android-bus">
