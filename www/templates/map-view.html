@@ -1,36 +1,52 @@
-<ion-view view-title="Map" ng-init="init()">
+<ion-view view-title="Map">
 	<ion-nav-buttons side="right">
-    <button class="button button-clear" ng-click="doSomething()">
-      <i class="ion-gear-b"></i>
-    </button>
-  </ion-nav-buttons>
-  <ion-content scroll="false">
-	 <!-- <ui-gmap-google-map center="map.center" draggable="true" zoom="map.zoom" options="map.options" events="map.events"> 
-                <ui-gmap-markers models="map.markers"  
-                doCluster="true"  
-                coords="'self'"  
-                icon="'icon'"  
-                click="'onclicked'" 
-                options="'options'" 
-                idkey='id' 
-                clusterOptions='map.clusterOptions'
-                control='markerControl.getChildMarkers().get(id)'>     
-                </ui-gmap-markers>
-            </ui-gmap-google-map>  -->
-            <!-- <map center="-34.397, 150.644" zoom="8"></map>
- -->  
+		<a class="button button-icon button-clear ion-gear-b" href="/#/profile">
+		</a>
+	</ion-nav-buttons>
+	<ion-content scroll="false">
+		<map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
+		{{ map.styles }}">
 
-<!-- <map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true"> </map>
- -->    <map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
- [{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'landscape.natural','elementType':'geometry.fill','stylers':[{'color':'#f8f8f8'}]},{'featureType':'landscape.man_made','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#676D75'}]},{'featureType':'poi','elementType':'geometry.fill','stylers':[{'color':'#cfd5db'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#666666'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.local','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'road.local','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'visibility':'on'}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#585d63'}]},{'featureType':'water','elementType':'geometry.fill','stylers':[{'color':'#43B7EA'}]}]
- ">
-      <info-window id="1" position="32.730346, -97.114586" visible="true">
-          <div ng-non-bindable="">
-            This is a test
-          </div>
-        </info-window>
-      </map>
+			<marker ng-repeat="marker in markers" position="{{ marker.coords.lat }}, {{ marker.coords.lng }}" title="{{ marker.name }}" animation="DROP" />
+		</map>
 
-    </ion-content>
+		
+<!-- 		<div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
+			<ul class="ghetto-tabs-list">
+				<li><a href="/#/shame"><button id="first-button"><i class="icon ion-sad"><p>Wall of shame</p></i></button></a></li>
+				<li><a><button ng-click="callDaPolice()" id="middle-buttn">
+						<i class="icon ion-ios-circle-filled"><p>Panic Button</p></i></button></a></li>
+				<li><a href="/#/profile"><button><i class="icon ion-android-contact"><p>Personalize</p></i></button></a></li>
+			</ul>
+		</div>
+ -->		
+		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
+ 			
+ 			<a href="/#/shame"><button id="first-button"><i class="icon ion-sad"><h5>Wall of Shame</h5></i></button></a>
+			
+			<a><button ng-click="callDaPolice()" id="middle-button"><i class="icon ion-ios-circle-filled"><h5>Panic Button</h5></i></button></a>
+			
+			<a href="/#/profile"><button><i class="icon ion-android-contact"><h5>Personalization</h5></i></button></a>
+		</div>
+
+		<ion-tabs class="tabs-icon-top ts-positive">
+		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s" on-select="pageSelect(1)">
+		  </ion-tab>
+
+		  <ion-tab title="Bus" icon-off="ion-android-bus" icon-on="ion-android-bus" on-select="pageSelect(2)">
+		  </ion-tab>
+
+		  <ion-tab title="Main" icon-off="ion-plus-round" icon-on="ion-plus-round" ng-click="mainSelect()">
+		  </ion-tab>
+
+		  <ion-tab title="Bike" icon-off="ion-android-bicycle" icon-on="ion-android-bicycle" on-select="pageSelect(4)">
+		  </ion-tab>
+
+		  <ion-tab title="Favorite" icon-off="ion-heart" icon-on="ion-heart" on-select="pageSelect(5)">
+		  </ion-tab>
+
+
+		</ion-tabs>
+	</ion-content>
 </ion-view>
 

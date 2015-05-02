@@ -1,6 +1,60 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
-.controller('DashCtrl', function($scope) {})
+.controller('MapViewController', function($scope, Markers) {
+  $scope.map = {};
+  $scope.markers = Markers.parking();
+  $scope.map.styles = [{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'landscape.natural','elementType':'geometry.fill','stylers':[{'color':'#f8f8f8'}]},{'featureType':'landscape.man_made','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#676D75'}]},{'featureType':'poi','elementType':'geometry.fill','stylers':[{'color':'#cfd5db'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#666666'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.local','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'road.local','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'visibility':'on'}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#585d63'}]},{'featureType':'water','elementType':'geometry.fill','stylers':[{'color':'#43B7EA'}]}];
+  $scope.mainSelected = false;
+
+  $scope.test = ['hello', 'world'];
+
+
+
+  $scope.pageSelect = function(b) {
+    if(b == 1) {
+      $scope.map.markers = Markers.parking();
+    } else {
+      $scope.map.markers = [];
+    }
+
+    console.log($scope.map.markers);
+  };
+
+  $scope.mainSelect = function() {
+    $scope.mainSelected = !$scope.mainSelected;
+  };
+
+  $scope.callDaPolice = function() {
+    alert("whoo wooo");
+    console.log(Markers.parking());
+  };
+
+})
+
+.controller('CameraController', function($scope, $cordovaCamera) {
+
+  $scope.test = "hello";
+
+  $scope.takePicture = function() {
+      var options = { 
+          quality : 75, 
+          destinationType : Camera.DestinationType.DATA_URL, 
+          sourceType : Camera.PictureSourceType.CAMERA, 
+          allowEdit : true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 300,
+          targetHeight: 300,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+          $scope.imgURI = "data:image/jpeg;base64," + imageData;
+      }, function(err) {
+          // An error occured. Show a message to the user
+      });
+  }
+});
 
 // .controller('MapCoordinatesCtrl', function($scope, $compile) {
 //       var TILE_SIZE = 256;
@@ -66,7 +120,7 @@ angular.module('starter.controllers', [])
 //       });
 //     });
 
-.controller('ChatsCtrl', function($scope, Chats) {
+/*.controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -81,4 +135,4 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+});*/
