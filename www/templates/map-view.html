@@ -1,4 +1,4 @@
-<ion-view view-title="Map" ng-init="mainMenuSelect()">
+<ion-view view-title="Map">
 	<ion-nav-buttons side="right">
 		<a class="button button-icon button-clear ion-gear-b" href="/#/profile">
 		</a>
@@ -13,21 +13,29 @@
 				</div>
 			</info-window>
 		</map>
+		
+		<div id="menu-popout" ng-show="true">
+			<ul class="ghetto-tabs-list">
+				<li><a href="/#/shame">Wall of shame</a></li>
+				<li><a ng-click="callDaPolice()">Panic Button</a></li>
+				<li><a href="/#/profile">Personalize</a></li>
+			</ul>
+		</div>
 
 		<ion-tabs class="tabs-icon-top ts-positive">
-		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s" ng-click="alert(1)">
+		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s" on-select="pageSelect(1)">
 		  </ion-tab>
 
-		  <ion-tab title="Bus" icon-off="ion-android-bus" icon-on="ion-android-bus">
+		  <ion-tab title="Bus" icon-off="ion-android-bus" icon-on="ion-android-bus" on-select="pageSelect(2)">
 		  </ion-tab>
 
-		  <ion-tab title="Main" icon-off="ion-plus-round" icon-on="ion-plus-round">
+		  <ion-tab title="Main" icon-off="ion-plus-round" icon-on="ion-plus-round" ng-click="mainSelect()">
 		  </ion-tab>
 
-		  <ion-tab title="Bike" icon-off="ion-android-bicycle" icon-on="ion-android-bicycle">
+		  <ion-tab title="Bike" icon-off="ion-android-bicycle" icon-on="ion-android-bicycle" on-select="pageSelect(4)">
 		  </ion-tab>
 
-		  <ion-tab title="Favorite" icon-off="ion-heart" icon-on="ion-heart">
+		  <ion-tab title="Favorite" icon-off="ion-heart" icon-on="ion-heart" on-select="pageSelect(5)">
 		  </ion-tab>
 
 

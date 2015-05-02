@@ -24,10 +24,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
 
   $stateProvider
-  .state('index', {
+
+  .state('map', {
     url: '/',
     templateUrl: 'templates/map-view.html',
-    controller: 'MapController'
+    controller: 'MapViewController'
+  })
+
+  .state('shame', {
+    url: '/shame',
+    templateUrl: 'templates/shame-view.html'
   })
 
   .state('profile', {
@@ -38,6 +44,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('settings-car', {
     url: '/profile/car',
     templateUrl: 'templates/settings-car.html'
+  })
+
+  .state('camera', {
+    url: '/camera',
+    templateUrl: 'templates/camera.html',
+    controller: 'CameraController'
   });
 
   // if none of the above states are matched, use this as the fallback

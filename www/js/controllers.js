@@ -1,37 +1,48 @@
 angular.module('starter.controllers', ['ngCordova'])
 
-.controller('DashCtrl', function($scope, $cordovaCamera) { //tab dash
+.controller('MapViewController', function($scope) {
 
-   $scope.takePicture = function() {
-        var options = { 
-            quality : 75, 
-            destinationType : Camera.DestinationType.DATA_URL, 
-            sourceType : Camera.PictureSourceType.CAMERA, 
-            allowEdit : true,
-            encodingType: Camera.EncodingType.JPEG,
-            targetWidth: 300,
-            targetHeight: 300,
-            popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: false
-        };
- 
-        $cordovaCamera.getPicture(options).then(function(imageData) {
-            $scope.imgURI = "data:image/jpeg;base64," + imageData;
-        }, function(err) {
-            // An error occured. Show a message to the user
-        });
-    }
-}) 
+  $scope.mainSelected = false;
 
-.controller('TabController', function($scope) {
-	
+  $scope.pageSelect = function(b) {
+    
+  };
+
+  $scope.mainSelect = function() {
+
+    $scope.mainSelected = !$scope.mainSelected;
+  };
+
+  $scope.callDaPolice = function() {
+    alert("whoo wooo");
+  };
+
 })
 
-.controller('MapController', function($scope) {
-	$scope.mainMenuSelect = function() {
-		alert("hello " + b);
-	};
-})
+.controller('CameraController', function($scope, $cordovaCamera) {
+
+  $scope.test = "hello";
+
+  $scope.takePicture = function() {
+      var options = { 
+          quality : 75, 
+          destinationType : Camera.DestinationType.DATA_URL, 
+          sourceType : Camera.PictureSourceType.CAMERA, 
+          allowEdit : true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 300,
+          targetHeight: 300,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+          $scope.imgURI = "data:image/jpeg;base64," + imageData;
+      }, function(err) {
+          // An error occured. Show a message to the user
+      });
+  }
+});
 
 // .controller('MapCoordinatesCtrl', function($scope, $compile) {
 //       var TILE_SIZE = 256;
@@ -97,7 +108,7 @@ angular.module('starter.controllers', ['ngCordova'])
 //       });
 //     });
 
-.controller('ChatsCtrl', function($scope, Chats) {
+/*.controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -112,4 +123,4 @@ angular.module('starter.controllers', ['ngCordova'])
   $scope.settings = {
     enableFriends: true
   };
-});
+});*/

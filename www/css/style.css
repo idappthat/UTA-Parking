@@ -11,6 +11,24 @@
 .bar-positive {
 }
 
+#menu-popout {
+  position: absolute;
+  bottom: 49px;
+  right: 0;
+  left: 0;
+  background: #fff;
+}
+
+.ghetto-tabs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ghetto-tabs-list li {
+  display: inline-block;
+}
+
 .angular-google-map {
   
   width:100%;
