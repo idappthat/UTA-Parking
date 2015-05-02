@@ -13,7 +13,7 @@
 
 #menu-popout {
   position: absolute;
-  bottom: 0px;
+  bottom: -60px;
   right: 0;
   left: 0;
   background: #fff;
@@ -26,10 +26,11 @@
   bottom: 49px;
 }
 
-.platform-android #menu-popout { bottom: -50px; }
-.platform-android #menu-popout.active { bottom: 0px; }
 
-.ghetto-tabs-list {
+.platform-android #menu-popout { bottom: -60px; }
+.platform-android #menu-popout.active { bottom: 49px; }
+
+/*.ghetto-tabs-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -37,7 +38,13 @@
 
 .ghetto-tabs-list li {
   display: inline-block;
-}
+  position: relative;
+  background: rgb(200,235,245);
+  border-width: 1px; 
+  border-color: #11c1f3;
+  max-width: 100%;
+  padding: 0;
+}*/
 
 .angular-google-map {
   
@@ -53,10 +60,114 @@
 
 .circle {
 	border-radius: 50%;
-	height: 150px;
+	height: 175px;
 	width: 150px;
 }
 
 .profile-box {
 	text-align: center;
 }
+
+#menu-popout a{
+  position: relative;
+  width: 100%; 
+}
+
+#menu-popout {
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  left: 0;
+  background: #fff;
+}
+
+#menu-popout button{
+  position: relative;
+  padding-bottom: 0px;
+  background: rgb(200,235,245);
+  border-width: 1px;
+  border-color: #11c1f3;
+  width: 100%;
+}
+
+#menu-popout #first-button{
+  border-right-width: 0;
+}
+
+#menu-popout #middle-button{
+  border-right-width: 0;
+}
+
+#menu-popout i{
+  position: relative;
+  font-size: 30px;
+}
+
+#menu-popout .ion-sad{
+  color: rgb(50,170,255);
+}
+
+#menu-popout .ion-ios-circle-filled{
+  color: rgb(243,70,150);
+}
+
+#menu-popout .ion-android-contact{
+  color: rgb(50,170,255);
+}
+
+
+#menu-popout h5{
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(50,193,243);
+  letter-spacing: -.1px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.profile-box h4{
+  line-height: 5%;
+  font-family: Impact, Charcoal, sans-serif;
+  letter-spacing: .3px;
+  color: rgb(100,100,100);
+}
+
+.profile-box h5{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(150,150,150);
+}
+
+#topItem{
+  border-top: .5em solid rgb(200,200,200);
+  border-top-right-radius: .5em;
+  border-top-left-radius: .5em;
+}
+
+.CarSelection i{
+  font-size: 35px;
+}
+
+.CarSelection .icon.ion-ios-cart{
+  color: #387ef5;
+}
+
+.CarSelection .icon.ion-jet{
+  color: #ef473a;
+}
+
+.CarSelection .icon.ion-android-bicycle{
+  color: #33cd5f;;
+}
+
+.CarSelection .icon.ion-android-walk{
+  color: #ffc900;;
+}
+
+.CarSelection .icon.ion-jet p{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(175,175,175);
+  display: inline;
+  margin-left: 10px;
+} 

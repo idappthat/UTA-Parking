@@ -21,6 +21,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
+//Force the NavBar title to center and tabs to be positioned at the bottom regardless of platfom
+.config(function($ionicConfigProvider){
+  $ionicConfigProvider.navBar.alignTitle('center');
+  $ionicConfigProvider.tabs.position('bottom');
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider

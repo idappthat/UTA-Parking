@@ -9,14 +9,24 @@
 
 			<marker ng-repeat="marker in markers" position="{{ marker.coords.lat }}, {{ marker.coords.lng }}" title="{{ marker.name }}" animation="DROP" />
 		</map>
+
 		
-		<div id="menu-popout" ng-class="{ active: mainSelected }">
+<!-- 		<div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
 			<ul class="ghetto-tabs-list">
-				<li>This menu is shitty --</li>
-				<li><a href="/#/shame">Wall of shame</a></li>
-				<li><a ng-click="callDaPolice()">Panic Button</a></li>
-				<li><a href="/#/profile">Personalize</a></li>
+				<li><a href="/#/shame"><button id="first-button"><i class="icon ion-sad"><p>Wall of shame</p></i></button></a></li>
+				<li><a><button ng-click="callDaPolice()" id="middle-buttn">
+						<i class="icon ion-ios-circle-filled"><p>Panic Button</p></i></button></a></li>
+				<li><a href="/#/profile"><button><i class="icon ion-android-contact"><p>Personalize</p></i></button></a></li>
 			</ul>
+		</div>
+ -->		
+		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
+ 			
+ 			<a href="/#/shame"><button id="first-button"><i class="icon ion-sad"><h5>Wall of Shame</h5></i></button></a>
+			
+			<a><button ng-click="callDaPolice()" id="middle-button"><i class="icon ion-ios-circle-filled"><h5>Panic Button</h5></i></button></a>
+			
+			<a href="/#/profile"><button><i class="icon ion-android-contact"><h5>Personalization</h5></i></button></a>
 		</div>
 
 		<ion-tabs class="tabs-icon-top ts-positive">
