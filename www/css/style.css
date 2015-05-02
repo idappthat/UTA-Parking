@@ -13,11 +13,21 @@
 
 #menu-popout {
   position: absolute;
-  bottom: 49px;
+  bottom: 0px;
   right: 0;
   left: 0;
   background: #fff;
+  transition: bottom 0.3s;
+  -webkit-transition: bottom 0.3s;
+  -moz-transition: bottom 0.3s;
 }
+
+#menu-popout.active {
+  bottom: 49px;
+}
+
+.platform-android #menu-popout { bottom: -50px; }
+.platform-android #menu-popout.active { bottom: 0px; }
 
 .ghetto-tabs-list {
   margin: 0;
