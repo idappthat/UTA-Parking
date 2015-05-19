@@ -1,4 +1,15 @@
 /* Empty. Add your own CSS if you like */
+.ghettoassfab{
+  /*background: #ccc;*/
+  display: block;
+  text-align: right;
+
+}
+
+i.ghettoassfab.ion-android-locate {
+  font-size: 150px;
+}
+
 
 #map {
     width: 100%;
