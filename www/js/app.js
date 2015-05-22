@@ -39,7 +39,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   .state('shame', {
     url: '/shame',
-    templateUrl: 'templates/shame-view.html'
+    templateUrl: 'templates/shame-view.html',
+    controller: 'ShameViewController'
   })
 
   .state('profile', {
