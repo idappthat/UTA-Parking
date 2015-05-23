@@ -1,13 +1,18 @@
 angular.module('starter.controllers', ['ngCordova', 'ngMap'])
 
 .controller('MapViewController', function($scope, $state, Markers, $ionicLoading) {
-  $scope.map = {
-    center: {
-        latitude: 45,
-        longitude: -73
-    },
-    zoom: 8
-    };
+  $scope.map = {};
+  $scope.$on('mapInitialized', function(evt, evtMap) {
+      $scope.map = evtMap;
+    });
+
+  // $scope.map = {
+  //   center: {
+  //       latitude: 45,
+  //       longitude: -73
+  //   },
+  //   zoom: 8
+  //   };
   $scope.markers = Markers.parking();
   $scope.map.styles = [{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'landscape.natural','elementType':'geometry.fill','stylers':[{'color':'#f8f8f8'}]},{'featureType':'landscape.man_made','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#676D75'}]},{'featureType':'poi','elementType':'geometry.fill','stylers':[{'color':'#cfd5db'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#666666'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.local','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'road.local','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'visibility':'on'}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#585d63'}]},{'featureType':'water','elementType':'geometry.fill','stylers':[{'color':'#43B7EA'}]}];
   $scope.mainSelected = false;
@@ -27,12 +32,7 @@ angular.module('starter.controllers', ['ngCordova', 'ngMap'])
 
     navigator.geolocation.getCurrentPosition(function (pos) {
       console.log('Got pos', pos);
-      //$scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-      //$scope.map.center.latitude = pos.coords.latitude; 
-      //$scope.map.center.longitude = pos.coords.longitude;
-
-      $scope.map.center.latitude = 45; 
-      $scope.map.center.longitude = -45;
+      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
 
       $ionicLoading.hide()
     }, function (error) {
