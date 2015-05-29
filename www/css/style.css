@@ -1,15 +1,14 @@
 /* Empty. Add your own CSS if you like */
-.ghettoassfab{
-  background: rgba(0,0,0,0.5);
+.ghettoassfab {
+  background: #fff;
   display: block;
   border-radius: 5px;
   margin: 10px;
 }
 
 .ghettoassfab i {
-  color: #fff;
+  color: #000;
 }
-
 
 #map {
     width: 100%;

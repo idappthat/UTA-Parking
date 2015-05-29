@@ -6,6 +6,7 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/leaflet/leaflet.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -18,18 +19,15 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <script src="lib/leaflet/leaflet.js" type="text/javascript"></script>
+    <script src="lib/leaflet/angular-leaflet-directive.js" type="text/javascript"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     
     <script src="js/libs/ng-cordova.min.js"></script>
-    <script src="js/libs/ng-map.min.js"></script>
-
-
-<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
   </head>
   <body ng-app="starter">
     <!--

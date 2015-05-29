@@ -1,6 +1,11 @@
 <ion-view view-title="Map">
 	<ion-content scroll="false" class="ng-scope">
-		<map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
+		<leaflet id="map" layers="mapData.layers" controlls="mapData.controls" center="mapData.center" animate="true" markers="mapData.markers">
+			<div class="leaflet-bar leaflet-top leaflet-right leaflet-control ghettoassfab">
+				<i ng-click="centerOnMe()" center="current-location" class="button button-icon icon ion-android-locate"></i>
+			</div>
+		</leaflet>
+		<!-- <map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
 		{{ map.styles }}">
 
 			<custom-control id="home" position="TOP_RIGHT" index="1" on-click="click()">
@@ -10,7 +15,7 @@
 	        </custom-control>
 			
 			<marker ng-repeat="marker in markers" position="{{ marker.coords.lat }}, {{ marker.coords.lng }}" title="{{ marker.name }}" animation="DROP" />
-		</map>	
+		</map>	 -->
 		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
  			
  			<button id="first-button" ui-sref="shame"><i class="icon ion-sad"><h5>Wall of Shame</h5></i></button>
