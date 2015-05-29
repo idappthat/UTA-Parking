@@ -1,8 +1,4 @@
 <ion-view view-title="Map">
-	<ion-nav-buttons side="right">
-		<a class="button button-icon button-clear ion-gear-b" ng-click="goToPage('profile')">
-		</a>
-	</ion-nav-buttons>
 	<ion-content scroll="false" class="ng-scope">
 		<map id="map" center="32.730346, -97.114586" zoom="17" disable-default-u-i="true" styles="
 		{{ map.styles }}">
@@ -17,9 +13,9 @@
 		</map>	
 		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
  			
- 			<button id="first-button" ng-click="goToPage('shame')"><i class="icon ion-sad"><h5>Wall of Shame</h5></i></button>
+ 			<button id="first-button" ui-sref="shame"><i class="icon ion-sad"><h5>Wall of Shame</h5></i></button>
 			<button id="middle-button"><i class="icon ion-ios-circle-filled"><h5>Panic Button</h5></i></button>
-			<button ng-click="goToPage('profile')"><i class="icon ion-android-contact"><h5>Personalization</h5></i></button>
+			<button ui-sref="profile"><i class="icon ion-android-contact"><h5>Personalization</h5></i></button>
 		</div>
 
 		<ion-tabs class="tabs-icon-top ts-positive">
