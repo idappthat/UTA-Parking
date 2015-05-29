@@ -35,45 +35,9 @@ angular.module('starter.controllers', ['ngCordova', 'leaflet-directive'])
 		map.attributionControl.setPrefix("");
 	});
 
-
-
-
-
-  /*$scope.map = {};
-  $scope.$on('mapInitialized', function(evt, evtMap) {
-      $scope.map = evtMap;
-  });
-  $scope.map.markers = [{
-  	lat: 32.730346,
-  	lng: -97.114586,
-  }];*/
-
-  /*$scope.map.markers[0].setMap($scope.map);
-  //$scope.markers = Markers.parking();
-  $scope.map.styles = [{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'landscape.natural','elementType':'geometry.fill','stylers':[{'color':'#f8f8f8'}]},{'featureType':'landscape.man_made','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#676D75'}]},{'featureType':'poi','elementType':'geometry.fill','stylers':[{'color':'#cfd5db'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.fill','stylers':[{'color':'#666666'}]},{'featureType':'road.highway.controlled_access','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.local','elementType':'geometry.fill','stylers':[{'visibility':'on'},{'color':'#ffffff'}]},{'featureType':'road.local','elementType':'geometry.stroke','stylers':[{'visibility':'off'}]},{'featureType':'road.arterial','elementType':'geometry.stroke','stylers':[{'visibility':'on'}]},{'featureType':'road.highway','elementType':'geometry.fill','stylers':[{'color':'#676d75'}]},{'featureType':'road.highway','elementType':'geometry.stroke','stylers':[{'color':'#585d63'}]},{'featureType':'water','elementType':'geometry.fill','stylers':[{'color':'#43B7EA'}]}];
-  $scope.mainSelected = false;*/
-  
-  /*$scope.centerOnMe = function () {
-    console.log("Centering");
-    if (!$scope.map) {
-      return;
-    }
-
-    $scope.loading = $ionicLoading.show({
-      content: 'Getting current location...',
-      showBackdrop: false
-    });
-
-    navigator.geolocation.getCurrentPosition(function (pos) {
-      console.log('Got pos', pos);
-      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-
-      $ionicLoading.hide()
-    }, function (error) {
-      alert('Unable to get location: ' + error.message);
-    });
-  };*/
-
+  $scope.centerOnMe = function() {
+    console.log("test");
+  };
 
   $scope.pageSelect = function(b) {
   	switch(b) {
@@ -100,6 +64,10 @@ angular.module('starter.controllers', ['ngCordova', 'leaflet-directive'])
     console.log(Markers.parking());
   };
 
+})
+
+.controller('ShameViewController', function($scope, WallOfShame) {
+  $scope.posts = WallOfShame.getRecent();
 })
 
 .controller('CameraController', function($scope, $cordovaCamera) {
