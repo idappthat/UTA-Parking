@@ -60,10 +60,6 @@ angular.module('starter.controllers', ['ngCordova', 'ngMap'])
 		console.log(Markers.parking());
 	};
 
-	$scope.goToPage = function(s) {
-		$state.go(s);
-	};
-
 })
 
 .controller('CameraController', function($scope, $cordovaCamera) {
