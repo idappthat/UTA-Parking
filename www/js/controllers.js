@@ -58,6 +58,11 @@ angular.module('starter.controllers', ['ngCordova', 'leaflet-directive'])
   $scope.mainSelect = function() {
     $scope.mainSelected = !$scope.mainSelected;
   };
+  
+  // selects
+  $scope.busSelect = function() {
+	$scope.busSelected = !$scope.busSelected;
+  }
 
   $scope.callDaPolice = function() {
     alert("whoo wooo");

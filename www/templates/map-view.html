@@ -5,6 +5,8 @@
 				<i ng-click="centerOnMe()" class="button button-icon icon ion-android-locate"></i>
 			</div>
 		</leaflet>
+		 
+		 
 		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
  			
  			<button id="first-button" ui-sref="shame"><i class="custom-icon icon-shame"></i><h5>Wall of Shame</h5></button>
@@ -16,7 +18,24 @@
 		  <ion-tab title="Parking" icon="tab-icon tab-icon-car" on-select="pageSelect(1)">
 		  </ion-tab>
 
-		  <ion-tab title="Bus" icon="tab-icon tab-icon-bus" on-select="pageSelect(2)">
+		  <ion-tab title="Bus" icon="tab-icon tab-icon-bus" on-select="pageSelect(2)" ng-click="busSelect()">
+			<!-- This is the bus button bar to select route -->
+			<ion-modal-view ng-class="{ active: busSelected }">
+				<div id="bus-popout">
+		 			<button id="Orange" class="button button-energized button-block">
+		 				<h2>Orange Route (Stadium long route A)</h2>
+		 				<h4>Bus ever 30min (7:25am-545pm)</h4>
+		 			</button>
+		 			<button id="Blue" class="button button-calm button-block">
+		 				<h2>Blue Route (Stadium long route B)</h2>
+		 				<h4>Bus ever 30min (7:45am-5:45pm)</h4>
+		 			</button>
+		 			<button id="Green" class="button button-balanced button-block">
+		 				<h2>Green Route (South Route)</h2>
+		 				<h4>Bus ever 15min (7:45am-5:30pm) </h4>
+		 			</button>
+				</div>		
+			</ion-modal-view>
 		  </ion-tab>
 
 		  <ion-tab title="Main" icon="tab-icon tab-icon-plus" ng-click="mainSelect()">
