@@ -8,9 +8,8 @@
 		 
 		 
 		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
- 			
  			<button id="first-button" ui-sref="shame"><i class="custom-icon icon-shame"></i><h5>Wall of Shame</h5></button>
-			<button id="middle-button"><i class="custom-icon icon-panic"></i><h5>Panic Button</h5></button>
+			<button id="middle-button" on-tap="callDaPolice()"><i class="custom-icon icon-panic"></i><h5>Panic Button</h5></button>
 			<button ui-sref="profile"><i class="custom-icon icon-profile"></i><h5>Personalization</h5></button>
 		</div>
 

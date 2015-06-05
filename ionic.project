@@ -1,6 +1,5 @@
 {
   "name": "UTA-Parking",
-  "app_id": "",
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -8,5 +7,6 @@
   "watchPatterns": [
     "www/**/*",
     "!www/lib/**/*"
-  ]
+  ],
+  "app_id": "d993b386"
 }
