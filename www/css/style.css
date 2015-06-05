@@ -94,46 +94,29 @@
 #menu-popout button{
   position: relative;
   padding-bottom: 0px;
-  background: rgb(200,235,245);
-  border-width: 1px;
-  border-color: #11c1f3;
+  background: #CBEBFA;
   width: 100%;
+  padding: 8px 0 0;
+  border: 2px solid #3BACD7;
+  border-bottom: none;
 }
 
 #menu-popout #first-button{
-  border-right-width: 0;
+  border-right: none;
 }
 
 #menu-popout #middle-button{
-  border-right-width: 0;
+  border-right: none;
 }
 
-#menu-popout i{
-  position: relative;
-  font-size: 30px;
-}
-
-#menu-popout .ion-sad{
-  color: rgb(50,170,255);
-}
-
-#menu-popout .ion-ios-circle-filled{
-  color: rgb(243,70,150);
-}
-
-#menu-popout .ion-android-contact{
-  color: rgb(50,170,255);
-}
-
-
-#menu-popout h5{
+#menu-popout h5 {
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   color: rgb(50,193,243);
   letter-spacing: -.1px;
   margin-top: 0;
-  padding: 0;
+  padding: 5px 0 0;
 }
 
 .profile-box h4{
@@ -180,4 +163,58 @@
   color: rgb(175,175,175);
   display: inline;
   margin-left: 10px;
-} 
+}
+
+.tab-icon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-size:contain;
+}
+
+.tab-icon-car {
+  background-size: 30%;
+  background-image: url('../img/icons/icon-car.png');
+}
+
+.tab-icon-bus {
+  background-size: 30%;
+  background-image: url('../img/icons/icon-bus.png');
+}
+
+.tab-icon-plus {
+  background-size: 28%;
+  background-image: url('../img/icons/icon-plus.png');
+}
+
+.tab-icon-bike {
+  background-size: 35%;
+  background-image: url('../img/icons/icon-bike.png');
+}
+
+.tab-icon-heart {
+  background-size: 28%;
+  background-image: url('../img/icons/icon-heart.png');
+}
+
+.custom-icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 35px;
+  background-size:contain;
+}
+
+.icon-shame {
+  background-image: url('../img/icons/icon-shame.png');
+}
+
+.icon-panic {
+  background-image: url('../img/icons/icon-panic.png');
+}
+
+.icon-profile {
+  background-image: url('../img/icons/icon-profile.png');
+}
+
+

@@ -7,25 +7,25 @@
 		</leaflet>
 		 <div class="button-bar" id="menu-popout" ng-class="{ active: mainSelected }">
  			
- 			<button id="first-button" ui-sref="shame"><i class="icon ion-sad"><h5>Wall of Shame</h5></i></button>
-			<button id="middle-button"><i class="icon ion-ios-circle-filled"><h5>Panic Button</h5></i></button>
-			<button ui-sref="profile"><i class="icon ion-android-contact"><h5>Personalization</h5></i></button>
+ 			<button id="first-button" ui-sref="shame"><i class="custom-icon icon-shame"></i><h5>Wall of Shame</h5></button>
+			<button id="middle-button"><i class="custom-icon icon-panic"></i><h5>Panic Button</h5></button>
+			<button ui-sref="profile"><i class="custom-icon icon-profile"></i><h5>Personalization</h5></button>
 		</div>
 
-		<ion-tabs class="tabs-icon-top ts-positive">
-		  <ion-tab title="Parking" icon-off="ion-model-s" icon-on="ion-model-s" on-select="pageSelect(1)">
+		<ion-tabs class="tabs-icon-top tabs-striped tabs-positive">
+		  <ion-tab title="Parking" icon="tab-icon tab-icon-car" on-select="pageSelect(1)">
 		  </ion-tab>
 
-		  <ion-tab title="Bus" icon-off="ion-android-bus" icon-on="ion-android-bus" on-select="pageSelect(2)">
+		  <ion-tab title="Bus" icon="tab-icon tab-icon-bus" on-select="pageSelect(2)">
 		  </ion-tab>
 
-		  <ion-tab title="Main" icon-off="ion-plus-round" icon-on="ion-plus-round" ng-click="mainSelect()">
+		  <ion-tab title="Main" icon="tab-icon tab-icon-plus" ng-click="mainSelect()">
 		  </ion-tab>
 
-		  <ion-tab title="Bike" icon-off="ion-android-bicycle" icon-on="ion-android-bicycle" on-select="pageSelect(4)">
+		  <ion-tab title="Bike" icon="tab-icon tab-icon-bike" on-select="pageSelect(4)">
 		  </ion-tab>
 
-		  <ion-tab title="Favorite" icon-off="ion-heart" icon-on="ion-heart" on-select="pageSelect(5)">
+		  <ion-tab title="Favorite" icon="tab-icon tab-icon-heart" on-select="pageSelect(5)">
 		  </ion-tab>
 
 
