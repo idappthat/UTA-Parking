@@ -14,13 +14,13 @@
 			<button ui-sref="profile"><i class="custom-icon icon-profile"></i><h5>Personalization</h5></button>
 		</div>
 
-		<ion-tabs class="tabs-icon-top tabs-striped tabs-positive">
+		<ion-tabs class="tabs-icon-only tabs-striped tabs-positive">
 		  <ion-tab title="Parking" icon="tab-icon tab-icon-car" on-select="pageSelect(1)">
 		  </ion-tab>
 
-		  <ion-tab title="Bus" icon="tab-icon tab-icon-bus" on-select="pageSelect(2)" ng-click="busSelect()">
+		  <ion-tab title="Bus" icon="tab-icon tab-icon-bus" on-select="pageSelect(2)">
 			<!-- This is the bus button bar to select route -->
-			<ion-modal-view ng-class="{ active: busSelected }">
+			<!-- <ion-modal-view ng-class="{ active: busSelected }">
 				<div id="bus-popout">
 		 			<button id="Orange" class="button button-energized button-block">
 		 				<h2>Orange Route (Stadium long route A)</h2>
@@ -35,7 +35,7 @@
 		 				<h4>Bus ever 15min (7:45am-5:30pm) </h4>
 		 			</button>
 				</div>		
-			</ion-modal-view>
+			</ion-modal-view> -->
 		  </ion-tab>
 
 		  <ion-tab title="Main" icon="tab-icon tab-icon-plus" ng-click="mainSelect()">

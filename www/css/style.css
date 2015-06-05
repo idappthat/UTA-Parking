@@ -96,7 +96,7 @@
   padding-bottom: 0px;
   background: #CBEBFA;
   width: 100%;
-  padding: 8px 0 0;
+  padding: 4px 0 0;
   border: 2px solid #3BACD7;
   border-bottom: none;
 }
@@ -117,6 +117,7 @@
   letter-spacing: -.1px;
   margin-top: 0;
   padding: 5px 0 0;
+  margin: 0 0 5px 0;
 }
 
 .profile-box h4{
@@ -167,33 +168,33 @@
 
 .tab-icon {
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: 50% 100%;
   height: 100%;
   background-size:contain;
 }
 
 .tab-icon-car {
-  background-size: 30%;
+  background-size: 38%;
   background-image: url('../img/icons/icon-car.png');
 }
 
 .tab-icon-bus {
-  background-size: 30%;
+  background-size: 38%;
   background-image: url('../img/icons/icon-bus.png');
 }
 
 .tab-icon-plus {
-  background-size: 28%;
+  background-size: 32%;
   background-image: url('../img/icons/icon-plus.png');
 }
 
 .tab-icon-bike {
-  background-size: 35%;
+  background-size: 42%;
   background-image: url('../img/icons/icon-bike.png');
 }
 
 .tab-icon-heart {
-  background-size: 28%;
+  background-size: 35%;
   background-image: url('../img/icons/icon-heart.png');
 }
 
@@ -201,7 +202,7 @@
   display: block;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 35px;
+  height: 32px;
   background-size:contain;
 }
 
